@@ -51,6 +51,9 @@ npm install
 nodemon index.js
 ```
 
+7. Aqui te dejo el github del front end para que puedas ver como se conecta con el back end.
+
+https://github.com/iviruu/tenis_progres.git
 
 
 
