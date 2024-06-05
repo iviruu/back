@@ -55,7 +55,7 @@ export const createRelacionAlumnoProfesor = async (req, res) => {
       // Obtener todas las relaciones donde el profesor sea el indicado
       const relaciones = await Alumnos.findAll({
         where: { teacher_id, estado_relacion: 1 },
-        include: [{ model: User, as: 'Alumno', attributes: ['name', 'surname']  }]
+        include: [{ model: User, as: 'Alumno', attributes: ['name', 'surname','photo', 'id_user']  }]
       });
   
       res.status(200).json({
