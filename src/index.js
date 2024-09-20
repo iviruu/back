@@ -50,6 +50,6 @@ app.use('/uploads', express.static(path.join(__dirname, 'src/uploads')));
 // Iniciar el servidor
 const PORT = process.env.PORT || 3006;
 
-app.listen(PORT, () => {
+app.listen(PORT,'0.0.0.0', () => {
   console.log(`Servidor iniciado en el puerto ${PORT}`);
 });
