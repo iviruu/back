@@ -8,6 +8,9 @@ const sequelize = new Sequelize(process.env.DB_NAME, process.env.DB_USER, proces
   host: process.env.DB_HOST,
   port: process.env.DB_PORT || 3306,
   dialect: 'mysql',
+  dialectOptions: {
+    connectTimeout: 600000, // 600 segundos
+  },
 });
 
 const syncroModel = async () => {
