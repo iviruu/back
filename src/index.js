@@ -22,7 +22,7 @@ const app = express();
 // Configura el middleware CORS para que peuda recibir solicitudes de POST, PUT, DELETE, UPDATE, etc.
 app.use(cors({
   credentials: true,
-  origin: ['http://localhost:4200','https://main--tenis-progress.netlify.app']
+  origin: 'http://localhost:4200'
 }));
 
 //header and populate req.cookies with an object keyed by the cookie names
@@ -48,8 +48,6 @@ const __dirname = path.resolve();
 app.use('/uploads', express.static(path.join(__dirname, 'src/uploads')));
 
 // Iniciar el servidor
-const PORT = process.env.PORT || 3006;
-
-app.listen(PORT,'0.0.0.0', () => {
-  console.log(`Servidor iniciado en el puerto ${PORT}`);
+app.listen(3000, () => {
+  console.log("Servidor iniciado en el puerto 3000");
 });

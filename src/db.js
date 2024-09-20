@@ -4,14 +4,15 @@ import dotenv from 'dotenv';
 
 dotenv.config();
 
-const sequelize = new Sequelize(process.env.DB_NAME, process.env.DB_USER, process.env.DB_PASSWORD, {
-  host: process.env.DB_HOST,
-  port: process.env.DB_PORT || 3306,
-  dialect: 'mysql',
-  dialectOptions: {
-    connectTimeout: 600000, // 600 segundos
-  },
-});
+const sequelize = new Sequelize(
+  process.env.DATABASE,
+  process.env.USER_NAME,
+  process.env.PASSWORD,
+  {
+    host: process.env.HOST_NAME,
+    dialect: 'mysql'
+  }
+);
 
 const syncroModel = async () => {
   try {
